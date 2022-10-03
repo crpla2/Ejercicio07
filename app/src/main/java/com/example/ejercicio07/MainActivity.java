@@ -1,13 +1,12 @@
 package com.example.ejercicio07;
 
-import androidx.annotation.ColorInt;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
@@ -17,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     int n;
     LinearLayout ll;
     Button b;
+    int color=colorAleatorio();
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
         n =6;
         anadeLayouts();
-        int color=colorAleatorio();
-      //  ultimoboton(color);
+
+
     }
+
 
     private void anadeLayouts() {
 
@@ -52,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         1));
                 b.setBackgroundColor(colorAleatorio());
-                b.setId(numBoton);
+                b.setId(View.generateViewId());
+                b.setTag(numBoton);
                 ll.addView(b);
                 numBoton++;
                 //System.out.println(b.getId());
@@ -61,18 +63,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    private void ultimoboton(int color){
-        View view;
-        Button b2= new
-        int num=0;
-        for (int i = 0; i < n; i++) {
-            ll.getChildAt(i).setBackgroundColor(color);
-            for (int j = 0; j < n; j++) {
-       ;num++;
+    private void ultimobBoton(View view){
+
+    }
+    private void cambiacolortodos (int color){
+        for (int i = 0; i < 36; i++) {
+            b.findViewWithTag(i).setBackgroundColor(color);
+
             }
         }
 
-    }
+
     private int colorAleatorio() {
         int color;
 
