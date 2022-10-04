@@ -63,12 +63,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    private void ultimobBoton(View view){
 
-    }
-    private void cambiacolortodos (int color){
-        for (int i = 0; i < 36; i++) {
-            b.findViewWithTag(i).setBackgroundColor(color);
+    public void Click(View view){
+        LinearLayout la;
+        for (int i = 0; i < n; i++) {
+          la= (LinearLayout) ll.getChildAt(i);
+            for (int j = 0; j < n; j++) {
+                 la.getChildAt(j).setBackgroundColor(colorAleatorio());
+            }
+
 
             }
         }
